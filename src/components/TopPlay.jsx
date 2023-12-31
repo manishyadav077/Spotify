@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import {FreeMode} from 'swiper/modules'
+import { FreeMode } from "swiper/modules";
 
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
@@ -14,7 +14,14 @@ import "swiper/css/navigation";
 
 const TopTrackCard = ({ song, i }) => (
   <div className="w-full flex flex-row items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer mb-2">
-    {song.title}
+    <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
+    <div className="flex-1 flex flex-row justify-between items-center">
+      <img
+        className="w-20 h-20 rounded-lg"
+        src={song?.images?.coverart}
+        alt="song?.title"
+      />
+    </div>
   </div>
 );
 
